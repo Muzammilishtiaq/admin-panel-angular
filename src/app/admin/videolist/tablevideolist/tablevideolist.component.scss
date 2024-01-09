@@ -1,0 +1,33 @@
+.uploadvideo-table-div th {
+    background-color: #555;
+    color: #fff;
+}
+
+.uploadvideo-table-div td {
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
+}
+
+.uploadvideo-table-div tbody {
+    color: #fff;
+}table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.action-btn{
+    width: 200px;
+    display: flex;
+    gap: 1px;
+}
+.action-btn button{
+
+background-color: transparent;
+}

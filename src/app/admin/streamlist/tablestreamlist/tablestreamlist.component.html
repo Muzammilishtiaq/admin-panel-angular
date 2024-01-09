@@ -1,0 +1,25 @@
+<div class="table-mobile">
+    <table class="container-fluid  live-stream-table-div" id="livestream-table">
+        <thead>
+            <tr class="">
+                <th class=" text-center">#</th>
+                <th class=" text-center">TITLE</th>
+                <th class=" text-center livestream-url">URL</th>
+                <th class=" text-center action-btn ">ACTION</th>
+            </tr>
+        </thead>
+        <tbody id="live-stream-tbody">
+            <!-- table tbody -->
+            <tr class="">
+                <td class="">1</td>
+                <td class="">222</td>
+                <td class=" livestream-url ">url</td>
+                <td class=" action-btn">
+                    <button id="${index}" class="border-0 text-white fw-bold "  onclick="livestreameditbtn(this.id)"> <span class="bg-success text-white px-1 py-1 rounded">edit</span></button>
+                    <button class="border-0 text-info fw-bold" id='${index}'  onclick="livestreamviewbtn(this.id)"> <span class="bg-warning text-white px-1 py-1 rounded">view</span></button>
+                    <button id="${index}" class="border-0 text-info fw-bold" onclick="livestreamdetetebtn(this.id)"> <span class="bg-danger text-white px-1 py-1 rounded">delete</span></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -8,7 +8,10 @@ const routes: Routes = [
     path:'',
     component:HomeComponent
   },{
-    path:'livestream',
+    path:'home',
+    component: HomeComponent
+  },{
+    path: 'livestream',
     component:LivepageComponent
   }
 ];

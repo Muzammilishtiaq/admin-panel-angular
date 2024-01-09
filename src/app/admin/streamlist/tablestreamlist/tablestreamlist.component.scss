@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.live-stream-table-div th {
+    background-color: #555;
+    color: #fff;
+}
+
+.live-stream-table-div td {
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
+}
+
+.live-stream-table-div tbody {
+    color: #fff;
+}
+
+.action-btn {
+    display: flex;
+    gap: 2px;
+    width: 200px;
+}
+.action-btn button{
+    background-color: transparent;
+}

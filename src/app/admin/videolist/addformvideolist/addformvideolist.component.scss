@@ -1,0 +1,39 @@
+.uploadvideo-form-div {
+    color: #fff;
+    padding-bottom: 50px;
+    margin-top: -30px;
+}
+
+.uploadvideo-form-div input {
+    border-radius: 0px;
+    border: 0px;
+    background-color: #333333;
+    color: #fff;
+}
+
+.uploadvideo-form-div textarea {
+    border-radius: 0px;
+    border: 0px;
+    background-color: #333333;
+    color: #fff;
+}
+
+.uploadvideo-form-div textarea::placeholder {
+
+    color: #836565;
+}
+
+.uploadvideo-form-div input::placeholder {
+
+    color: #715e5e;
+}
+
+.uploadvideo-form-div .button {
+    color: #fff;
+    background-color: red;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}

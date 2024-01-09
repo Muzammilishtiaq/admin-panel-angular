@@ -1,0 +1,38 @@
+.form-logo-container {
+    background-color: #000;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 2%;
+    left: 40%;
+    width: 30%;
+    height: auto;
+    padding: 20px;
+}
+
+#login-form {
+    color: #fff;
+    // padding: 20px;
+}
+
+#login-form input {
+    border-radius: 0px;
+    border: 0px;
+    background-color: #333333;
+    color: #fff;
+}
+
+#login-form input::placeholder {
+    color: #836565;
+}
+
+#login-form .button {
+    color: #fff;
+    background-color: red;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}

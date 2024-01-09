@@ -1,1 +1,32 @@
-<p>signup works!</p>
+<div class="container-fluid position-relative p-0 ">
+    <img src="../../../assets/img/bg.png" alt="" style="height: 100vh;width: 100%;">
+    <div class="form-logo-container">
+        <img src="../../../assets/img/logo.png" alt="" class="w-50 mb-3">
+        <div class=" " id="register-form">
+            <h1 class="mb-4 fw-bold">SIGNUP</h1>
+            <form action="" id="register">
+                <div class="mb-3">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                </div>
+                <div class="mb-3">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" maxlength="4" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" class="button" value="Register">
+                </div>
+            </form>
+            <p>Account Already? <a routerLink="/login" id="login-link" class="" style="text-decoration: none;color: red;">Login</a>
+            </p>
+        </div>
+    </div>
+</div>

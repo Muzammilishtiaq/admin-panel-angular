@@ -1,0 +1,25 @@
+<table class="uploadvideo-table-div" id="uploadvideo-table">
+    <thead>
+        <tr class="">
+            <th class=" text-center">#</th>
+            <th class=" text-center">TITLE</th>
+            <th class=" text-center uploadvideo-videourl">URL</th>
+            <th class=" text-center action-btn">ACTION</th>
+        </tr>
+    </thead>
+    <tbody id="video-upload-tbody">
+        <tr class="">
+            <td class="">1</td>
+            <td class="">www</td>
+            <td class="uploadvideo-videourl">dddddd</td>
+            <td class=" action-btn">
+                <button class="border-0 text-info fw-bold" id="${index}" onclick="videouploadEditbtn(this.id)"> <span
+                        class="bg-success text-white px-1 py-1 rounded">edit</span></button>
+                <button class="border-0 text-info fw-bold" id="${index}" onclick="videouploadviewbtn(this.id)"> <span
+                        class="bg-warning text-white px-1 py-1 rounded">view</span></button>
+                <button class="border-0 text-info fw-bold" id="${index}" onclick="uploadvideodeletebtn(this.id)"><span
+                        class="bg-danger text-white px-1 py-1 rounded">delete</span></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

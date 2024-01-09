@@ -1,0 +1,39 @@
+.live-stream-form-class {
+    color: #fff;
+    padding-bottom: 50px;
+    margin-top: -30px;
+}
+
+.live-stream-form-class input {
+    border-radius: 0px;
+    border: 0px;
+    background-color: #333333;
+    color: #fff;
+}
+
+.live-stream-form-class textarea {
+    border-radius: 0px;
+    border: 0px;
+    background-color: #333333;
+    color: #fff;
+}
+
+.live-stream-form-class textarea::placeholder {
+
+    color: #836565;
+}
+
+.live-stream-form-class input::placeholder {
+
+    color: #836565;
+}
+
+.live-stream-form-class .button {
+    color: #fff;
+    background-color: red;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
