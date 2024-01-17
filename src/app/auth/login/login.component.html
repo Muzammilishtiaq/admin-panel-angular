@@ -4,17 +4,35 @@
         <a routerLink="/"><img src="../../../assets/img/logo.png" alt="" class="w-50 mb-3"></a>
         <div class="" id="login-form">
             <h1 class="mb-4 fw-bold">LOGIN</h1>
-            <form action="" id="login">
+            <form action="" [formGroup]="loginform" (ngSubmit)="Onsubmit()">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="logemail" placeholder="name@example.com">
+                    <input type="email" class="form-control" formControlName="email" placeholder="name@example.com"
+                        [ngClass]="{'is-invalid': submitted && email.errors }">
+                    <div class="invalid-feedback" *ngIf="submitted && email.errors">
+                        <div class="form-label text-danger" *ngIf="email.errors?.['required']">Email is a Required</div>
+                        <div class="form-label text-danger"
+                            *ngIf="email.errors?.['email']&& (email.dirty|| email.touched)">Email is a unvaild</div>
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="logpassword" placeholder="Password">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password"
+                        [ngClass]="{'is-invalid': submitted && password.errors }">
+                    <div class="invalid-feedback" *ngIf="submitted && password.errors">
+                        <div class="form-label text-danger" *ngIf="password.errors?.['required']">Password is a Required
+                        </div>
+                        <div class="form-label text-danger" *ngIf="password.errors?.['maxlength']">Password is a 8
+                            Characters</div>
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <input type="submit" class="button" value="Login">
+                    <button class="button d-flex gap-2 align-items-center justify-content-center " type="submit" [disabled]="loading">
+                        <div class="spinner-border text-light" style="font-size: 20px;width: 20px;height: 20px;" role="status" *ngIf="loading">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <span>Login</span>
+                    </button>
                 </div>
             </form>
             <p>Account Not? <a routerLink="/signup" id="register-link" class=""

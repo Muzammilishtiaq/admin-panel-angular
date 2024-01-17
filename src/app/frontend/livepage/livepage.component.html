@@ -4,4 +4,15 @@
     <img src="../../../assets/img/bg.png" alt="">
     <h1>Live Stream Pages</h1>
 </div> 
+<div class="container">
+    <div class="row">
+        <div class="card col-3 m-2 p-0 " style="width: 18rem;" *ngFor="let item of videocard">
+          <a routerLink="/player/live/{{item.id}}">
+            <img src='https://user-images.githubusercontent.com/132100144/235238944-cf6daf37-4c0c-42f6-ab34-193ed5ef3058.png' class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <h5 class="card-title">{{item.liveTitle}}</h5>
+            </div>
+          </div>
+    </div>
+</div>
 <app-footer/>

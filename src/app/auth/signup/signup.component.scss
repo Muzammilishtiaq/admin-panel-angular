@@ -4,11 +4,16 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 2%;
+    top: 1%;
     left: 40%;
     width: 30%;
     height: auto;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+
 }
 
 #register-form {
@@ -17,13 +22,13 @@
 
 #register-form input {
     border-radius: 0px;
-    border: 0px;
+    border: 2px solid #333333 ;
     background-color: #333333;
     color: #fff;
 }
 
 #register-form input::placeholder {
-    color: #836565;
+    color: #836565c0;
 }
 
 #register-form .button {
@@ -34,4 +39,7 @@
     font-size: 20px;
     font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
+}
+.disable{
+    background-color:#836565c0;
 }

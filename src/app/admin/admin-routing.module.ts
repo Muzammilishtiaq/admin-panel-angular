@@ -4,6 +4,7 @@ import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StreamlistComponent } from './streamlist/streamlist.component';
 import { VideolistComponent } from './videolist/videolist.component';
+import { AddformstreamlistComponent } from './streamlist/addformstreamlist/addformstreamlist.component';
 
 const routes: Routes = [
   {

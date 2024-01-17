@@ -1,31 +1,68 @@
 <div class="container-fluid position-relative p-0 ">
-    <img src="../../../assets/img/bg.png" alt="" style="height: 100vh;width: 100%;">
+    <img src="../../../assets/img/bg.png" alt="" style="height: 110vh;width: 100%;">
     <div class="form-logo-container">
-        <img src="../../../assets/img/logo.png" alt="" class="w-50 mb-3">
+        <img src="../../../assets/img/logo.png" alt="" class="w-50 mb-2">
         <div class=" " id="register-form">
-            <h1 class="mb-4 fw-bold">SIGNUP</h1>
-            <form action="" id="register">
-                <div class="mb-3">
+            <h3 class="mb-2 fw-bold">SIGNUP</h3>
+            <form [formGroup]="registerform" (ngSubmit)="Onsubmit()">
+                <div class="mb-1">
                     <label for="firstname" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                    <input type="text" class="form-control" formControlName="firstname" placeholder="First Name"
+                        [ngClass]="{'is-invalid': submitted && firstname.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && firstname.errors">
+                        <div class="text-danger" *ngIf="firstname.errors?.['required']">First Name is Required</div>
+                    </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-1">
                     <label for="lastname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                    <input type="text" class="form-control" formControlName="lastname" placeholder="Last Name"
+                        [ngClass]="{'is-invalid': submitted && lastname.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && lastname.errors">
+                        <div class="text-danger" *ngIf="lastname.errors?.['required']">Last Name is Required</div>
+                    </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-1">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <input type="email" class="form-control" formControlName="email" placeholder="name@example.com"
+                        [ngClass]="{'is-invalid': submitted && email.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && email.errors">
+                        <div class="text-danger" *ngIf="email.errors?.['required']">Email is Required</div>
+                        <div class="text-danger" *ngIf="email.errors?.['email'] && (email.dirty|| email.touched)">Email
+                            is unvalid</div>
+                    </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-1">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" maxlength="4" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password"
+                        [ngClass]="{'is-invalid': submitted && password.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && password.errors">
+                        <div class="text-danger" *ngIf="password.errors?.['required']">Password is Required</div>
+                        <div class="form-label text-danger"
+                            *ngIf="password.errors?.['maxlength'] && (password.touched)">Password is a
+                            8 Characters</div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <input type="submit" class="button" value="Register">
+                <div class="mb-1">
+                    <label for="password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" formControlName="confirmpassword" placeholder="Password"
+                        [ngClass]="{'is-invalid': submitted && confirmpassword.errors}">
+                    <div class="invalid-feedback" *ngIf="submitted && confirmpassword.errors">
+                        <div class="text-danger" *ngIf="confirmpassword.errors?.['required']">Confirm Password is
+                            Required</div>
+                    </div>
+                </div>
+                <div class="mb-1">
+                    <button type="submit" class="button">
+                        <span>Register</span>
+                        <div class="spinner-border text-light" style="font-size: 20px;width: 20px;height: 20px;"
+                            role="status" *ngIf="loading">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </button>
                 </div>
             </form>
-            <p>Account Already? <a routerLink="/login" id="login-link" class="" style="text-decoration: none;color: red;">Login</a>
+            <p>Account Already? <a routerLink="/login" id="login-link" class=""
+                    style="text-decoration: none;color: red;">Login</a>
             </p>
         </div>
     </div>

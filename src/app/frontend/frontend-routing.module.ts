@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LivepageComponent } from './livepage/livepage.component';
+import { VideoplayerComponent } from './videoplayer/videoplayer.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,9 @@ const routes: Routes = [
   },{
     path: 'livestream',
     component:LivepageComponent
+  },{
+    path:'player/:videoType/:videoId',
+    component:VideoplayerComponent
   }
 ];
 
