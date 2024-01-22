@@ -1,5 +1,12 @@
 <div class="table-mobile">
-    <table class="container-fluid  live-stream-table-div" id="livestream-table">
+    <div class="add-livestream-div">
+        <h2 class="">Live Stream</h2>
+        <!-- <li class="nav-item"></li> -->
+        <button routerLink="addstreamlist" class=""><span>Add Live
+                Stream</span></button>
+    </div>
+    <!-- <table class="container-fluid  live-stream-table-div" id="livestream-table">
+
         <thead>
             <tr class="">
                 <th class=" text-center">#</th>
@@ -9,11 +16,11 @@
             </tr>
         </thead>
         <tbody id="live-stream-tbody">
-            <!-- table tbody -->
-            <tr class="">
-                <td class="">1</td>
-                <td class="">222</td>
-                <td class=" livestream-url ">url</td>
+            table tbody
+            <tr class="tr-body">
+                <td class="num">1</td>
+                <td class="title">222</td>
+                <td class="url ">url</td>
                 <td class=" action-btn">
                     <button id="${index}" class="border-0 text-white fw-bold "  onclick="livestreameditbtn(this.id)"> <span class="bg-success text-white px-1 py-1 rounded">edit</span></button>
                     <button class="border-0 text-info fw-bold" id='${index}'  onclick="livestreamviewbtn(this.id)"> <span class="bg-warning text-white px-1 py-1 rounded">view</span></button>
@@ -21,5 +28,25 @@
                 </td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
+
+    <div class="row live-stream-table-div">
+        <div class="livestream-container">
+            <div>#</div>
+            <div>title</div>
+            <div>video url</div>
+            <div>action</div>
+        </div>
+        <div class="container livestream-container-tbody" *ngFor="let item of addtabledata; let i = index">
+            <p class="fs-6">{{i+1}}</p>
+            <p class="fs-6">{{item.livestreamtitle}}</p>
+            <p class="fs-6">{{item.livestreamvideourl}}</p>
+            <p class="action-btn ">
+                <button class="w-25 p-1 m-1 bg-info fs-6">View</button>
+                <button class="w-25 p-1 m-1 bg-danger fs-6">Delete</button>
+                <button class="w-25 p-1 m-1 bg-success fs-6" (click)="editbutton(this.i)">Edit</button>
+            </p>
+        </div>
+
+    </div>
 </div>

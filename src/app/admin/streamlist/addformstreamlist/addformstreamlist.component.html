@@ -1,21 +1,37 @@
-<form action="" id="add-livestream-form" class="live-stream-form-class">
-    <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input type="text" class="form-control" id="live-stream-title" placeholder="Enter Title">
+<div class="container addlivestreamcontainer">
+    <div class="add-livestream-div">
+        <h2 class="">Add Live Stream</h2>
     </div>
-    <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <textarea class="form-control" id="live-stream-description" placeholder="Enter Description"
-            cols="5" rows="5"></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="url" class="form-label">Image URL</label>
-        <input type="text" class="form-control" id="live-stream-imgurl" placeholder="Enter URL">
-    </div>
-    <div class="mb-3">
-        <label for="url" class="form-label">URL</label>
-        <input type="text" class="form-control" id="live-stream-url" placeholder="Enter URL">
-    </div>
-    <input type="submit" id="livebtn" value="Stream Add" class="button">
-    <input type="hidden"  value="Save" class="">
-</form>
+    <form action="" [formGroup]="addlivestreamform" (ngSubmit)="addlivestreamsubmit()" class="live-stream-form-class">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" formControlName="livestreamtitle" placeholder="Enter Title" [ngClass]="{'is-invalid':submitted && livestreamtitle.errors}">
+            <div class="invalid-feedback" *ngIf="submitted && livestreamtitle.errors">
+            <div class="text-danger form-label" *ngIf="livestreamtitle.errors?.['required']">Title is a Required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" formControlName="livestreamdescription" placeholder="Enter Description" [ngClass]="{'is-invalid':submitted && livestreamdescription.errors}"
+                cols="5" rows="5"></textarea>
+                <div class="invalid-feedback" *ngIf="submitted && livestreamdescription.errors">
+                <div class="text-danger form-label" *ngIf="livestreamdescription.errors?.['required']">Description is a Requird</div>
+                </div>
+        </div>
+        <div class="mb-3">
+            <label for="url" class="form-label">Image Url</label>
+            <input type="text" class="form-control" formControlName="livestreamimgurl" placeholder="Enter Image url" [ngClass]="{'is-invalid':submitted && livestreamimgurl.errors}">
+            <div class="invalid-feedback" *ngIf="submitted && livestreamimgurl.errors">
+            <div class="text-danger form-label" *ngIf="livestreamimgurl.errors?.['required']">Image url is a Required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="url" class="form-label">Video Url</label>
+            <input type="text" class="form-control" formControlName="livestreamvideourl" placeholder="Enter Video url" [ngClass]="{'is-invalid':submitted && livestreamvideourl.errors}">
+            <div class="invalid-feedback" *ngIf="submitted && livestreamvideourl.errors">
+                <div class="text-danger form-label" *ngIf="livestreamvideourl.errors?.['required']">Image url is a Required</div>
+                </div>
+        </div>
+        <input type="submit" id="livebtn" value="Stream Add" class="button">
+    </form>
+</div>

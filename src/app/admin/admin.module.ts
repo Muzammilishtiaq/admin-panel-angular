@@ -15,7 +15,7 @@ import { TablevideolistComponent } from './videolist/tablevideolist/tablevideoli
 import { AddformvideolistComponent } from './videolist/addformvideolist/addformvideolist.component';
 import { EditformvideolistComponent } from './videolist/editformvideolist/editformvideolist.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import{ReactiveFormsModule} from '@angular/forms'
 
 
 
@@ -37,7 +37,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

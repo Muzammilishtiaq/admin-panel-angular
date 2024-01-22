@@ -5,6 +5,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StreamlistComponent } from './streamlist/streamlist.component';
 import { VideolistComponent } from './videolist/videolist.component';
 import { AddformstreamlistComponent } from './streamlist/addformstreamlist/addformstreamlist.component';
+import { TablestreamlistComponent } from './streamlist/tablestreamlist/tablestreamlist.component';
+import { EditformstreamlistComponent } from './streamlist/editformstreamlist/editformstreamlist.component';
+import { AddformvideolistComponent } from './videolist/addformvideolist/addformvideolist.component';
+import { EditformvideolistComponent } from './videolist/editformvideolist/editformvideolist.component';
+import { TablevideolistComponent } from './videolist/tablevideolist/tablevideolist.component';
 
 const routes: Routes = [
   {
@@ -20,12 +25,40 @@ const routes: Routes = [
         component: DashboardComponent
       }, {
         path: "streamlist",
-        component: StreamlistComponent
+        component: StreamlistComponent,
+        children: [
+          {
+            path: 'addstreamlist',
+            component: AddformstreamlistComponent
+          }, {
+            path: '',
+            component: TablestreamlistComponent
+          }, {
+            path: 'editstreamlist',
+            component: EditformstreamlistComponent
+          }
+        ]
+
       },
       {
-        path: "videolist",
-        component: VideolistComponent
+        path: 'videolist',
+        component: VideolistComponent,
+        children: [
+          {
+            path:'',
+            component:TablevideolistComponent
+          },
+          {
+            path: 'addvideolist',
+          component:AddformvideolistComponent
+          },{
+            path:'editstreamlist/:id',
+            component:EditformvideolistComponent,
+            pathMatch:'full'
+          }
+        ]
       }
+
     ]
   }
 ];

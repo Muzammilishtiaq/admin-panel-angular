@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
     const storedData = localStorage.getItem('signupdata')
     if (storedData) {
       this.storedsignupdata = JSON.parse(storedData);
-      console.log(this.storedsignupdata.email)
+      console.log(this.storedsignupdata)
 
     } else {
       console.log('localstorage get error')

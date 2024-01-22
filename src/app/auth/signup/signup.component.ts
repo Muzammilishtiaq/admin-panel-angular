@@ -10,7 +10,7 @@ import { MustMatch } from 'src/app/helper/must-match.validator';
 })
 export class SignupComponent {
   submitted: Boolean = false;
-  loading:boolean=false;
+  loading: boolean = false;
   registerform: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder) {
@@ -18,7 +18,7 @@ export class SignupComponent {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required,Validators.maxLength(8)]],
+      password: ['', [Validators.required, Validators.maxLength(8)]],
       confirmpassword: ['', Validators.required]
     }, {
       validator: MustMatch('password', 'confirmpassword')
@@ -26,19 +26,19 @@ export class SignupComponent {
 
   }
 
-  get firstname(){
+  get firstname() {
     return this.registerform.get('firstname') as FormControl
   };
-  get lastname(){
+  get lastname() {
     return this.registerform.get('lastname') as FormControl
   };
-  get email(){
+  get email() {
     return this.registerform.get('email') as FormControl
   };
-  get password(){
+  get password() {
     return this.registerform.get('password') as FormControl
   };
-  get confirmpassword(){
+  get confirmpassword() {
     return this.registerform.get('confirmpassword') as FormControl
   };
 
@@ -46,14 +46,14 @@ export class SignupComponent {
   Onsubmit() {
     this.submitted = true;
     if (this.registerform.valid && !this.loading) {
-    const formvalue= this.registerform.value;
-     this.loading=true;
-    localStorage.setItem('signupdata',JSON.stringify (formvalue))
-    console.log(formvalue)
-  }
-  this.registerform.reset();
-  this.submitted=false;
-  this.loading=false;
+      const formvalue = this.registerform.value;
+      this.loading = true;
+      localStorage.setItem('signupdata', JSON.stringify(formvalue))
+      console.log(formvalue)
+      this.registerform.reset();
+      this.submitted = false;
+    }
+    this.loading = false;
   }
 
 }
